@@ -1,0 +1,86 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "modular_navigation",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "type": "dart"
+        },
+        {
+            "name": "modular_navigation (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "modular_navigation (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "one",
+            "cwd": "packages/one",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "one (profile mode)",
+            "cwd": "packages/one",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "one (release mode)",
+            "cwd": "packages/one",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "three",
+            "cwd": "packages/three",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "three (profile mode)",
+            "cwd": "packages/three",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "three (release mode)",
+            "cwd": "packages/three",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "two",
+            "cwd": "packages/two",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "two (profile mode)",
+            "cwd": "packages/two",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "two (release mode)",
+            "cwd": "packages/two",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
