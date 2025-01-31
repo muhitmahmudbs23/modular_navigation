@@ -1,7 +1,9 @@
 import 'dart:developer';
 
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:modular_navigation/navigation.gr.dart';
 import 'package:one/navigator.dart';
 import 'package:two/two.dart';
 
@@ -15,6 +17,23 @@ final GlobalKey<NavigatorState> oneNavigatorKey = GlobalKey<NavigatorState>();
 final GlobalKey<NavigatorState> twoNavigatorKey = GlobalKey<NavigatorState>();
 final GlobalKey<NavigatorState> threeNavigatorKey = GlobalKey<NavigatorState>();
 
+@AutoRouterConfig()
+class AppRouter extends RootStackRouter {
+  @override
+  List<AutoRoute> get routes => [
+        AutoRoute(path: '/', page: HomeRoute.page, children: [
+          AutoRoute(
+            path: 'b',
+            page: BRoute.page,
+          ),
+        ]),
+        AutoRoute(
+          path: '/a',
+          page: ARoute.page,
+        )
+      ];
+}
+
 final GoRouter router = GoRouter(
   debugLogDiagnostics: true,
   navigatorKey: rootNavigatorKey,
@@ -26,9 +45,9 @@ final GoRouter router = GoRouter(
       builder: (context, state) => const HomeScreen(),
       routes: [
         GoRoute(
-          path: APage.path,
-          name: APage.path,
-          builder: (context, state) => const APage(),
+          path: AScreen.path,
+          name: AScreen.path,
+          builder: (context, state) => const AScreen(),
           routes: [
             GoRoute(
               path: BPage.path,

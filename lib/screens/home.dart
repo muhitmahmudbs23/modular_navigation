@@ -1,12 +1,14 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:modular_navigation/navigation.dart';
+import 'package:modular_navigation/navigation.gr.dart';
 import 'package:one/one.dart';
 
-import 'a.dart';
 import 'b.dart';
 import 'c.dart';
 
-
+@RoutePage()
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -20,13 +22,13 @@ class HomeScreen extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                context.pushNamed(APage.path);
+                context.pushRoute(const ARoute());
               },
               child: const Text('Go to A Page'),
             ),
             ElevatedButton(
               onPressed: () {
-                context.pushNamed(BPage.path);
+                context.pushRoute(const BRoute());
               },
               child: const Text('Go to B Page'),
             ),
@@ -42,6 +44,7 @@ class HomeScreen extends StatelessWidget {
               },
               child: const Text('Go to Package One'),
             ),
+            const Expanded(child: AutoRouter()),
             // ElevatedButton(
             //   onPressed: () {
             //     context.pushNamed(InitOnePage.path);
