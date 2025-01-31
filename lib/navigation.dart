@@ -1,65 +1,21 @@
 import 'dart:developer';
 
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:one/navigator.dart';
-import 'package:two/two.dart';
 
-import 'screens/a.dart';
-import 'screens/b.dart';
-import 'screens/c.dart';
-import 'screens/home.dart';
+import 'screens/screen_routes.dart';
+
+
+
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
-final GlobalKey<NavigatorState> oneNavigatorKey = GlobalKey<NavigatorState>();
-final GlobalKey<NavigatorState> twoNavigatorKey = GlobalKey<NavigatorState>();
-final GlobalKey<NavigatorState> threeNavigatorKey = GlobalKey<NavigatorState>();
+
 
 final GoRouter router = GoRouter(
   debugLogDiagnostics: true,
   navigatorKey: rootNavigatorKey,
   observers: [MyRouterObserver()],
-  routes: [
-    GoRoute(
-      path: '/',
-      name: 'home',
-      builder: (context, state) => const HomeScreen(),
-      routes: [
-        GoRoute(
-          path: APage.path,
-          name: APage.path,
-          builder: (context, state) => const APage(),
-          routes: [
-            GoRoute(
-              path: BPage.path,
-              name: BPage.path,
-              builder: (context, state) => const BPage(),
-              routes: [
-                GoRoute(
-                  path: CPage.path,
-                  name: CPage.path,
-                  builder: (context, state) => const CPage(),
-                ),
-              ],
-            ),
-          ],
-        ),
-        // GoRoute(
-        //   path: InitOnePage.path,
-        //   name: InitOnePage.path,
-        //   builder: (context, state) => const InitOnePage(),
-        //   routes: [...oneRoutes],
-        // ),
-        ...oneRoutes,
-        ...twoRoutes,
-        // GoRoute(
-        //   path: InitTwoPage.path,
-        //   name: InitTwoPage.path,
-        //   builder: (context, state) => const InitTwoPage(),
-        // ),
-      ],
-    ),
-  ],
+  routes: $appRoutes,
 );
 
 class MyRouterObserver extends NavigatorObserver {
