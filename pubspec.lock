@@ -617,7 +617,7 @@ packages:
     source: hosted
     version: "1.0.2"
   two:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "packages/two"
       relative: true

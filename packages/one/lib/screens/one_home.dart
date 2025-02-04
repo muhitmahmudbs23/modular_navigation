@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:one/screens/one_a.dart';
+import 'package:one/screens/screen_routes.dart';
 import 'package:two/two.dart';
 
 
-import 'one_b.dart';
-import 'one_c.dart';
-
 class OneHomeScreen extends StatelessWidget {
-  static const String path = 'one';
   const OneHomeScreen({super.key});
 
   @override
@@ -23,19 +19,19 @@ class OneHomeScreen extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                context.pushNamed(OneAScreen.path);
+                const OneAPageRoute().go(context);
               },
               child: const Text('Go to A Page'),
             ),
             ElevatedButton(
               onPressed: () {
-                context.pushNamed(OneBScreen.path);
+                const OneBPageRoute().go(context);
               },
               child: const Text('Go to B Page'),
             ),
             ElevatedButton(
               onPressed: () {
-                context.pushNamed(OneCScreen.path);
+                const OneCPageRoute().go(context);
               },
               child: const Text('Go to C Page'),
             ),
@@ -45,12 +41,6 @@ class OneHomeScreen extends StatelessWidget {
               },
               child: const Text('Go to Package Two'),
             ),
-            // ElevatedButton(
-            //   onPressed: () {
-            //     context.pushNamed(InitThreePage.path);
-            //   },
-            //   child: const Text('Go to Package Three'),
-            // ),
           ],
         ),
       ),

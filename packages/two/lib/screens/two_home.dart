@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-
-import 'two_a.dart';
-import 'two_b.dart';
-import 'two_c.dart';
+import 'package:two/screens/screen_routes.dart';
 
 class TwoHomeScreen extends StatelessWidget {
   static const String path = 'two';
@@ -21,19 +17,19 @@ class TwoHomeScreen extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                context.pushNamed(TwoAScreen.path);
+                const TwoAPageRoute().go(context);
               },
               child: const Text('Go to A Page'),
             ),
             ElevatedButton(
               onPressed: () {
-                context.pushNamed(TwoBScreen.path);
+                const TwoBPageRoute().go(context);
               },
               child: const Text('Go to B Page'),
             ),
             ElevatedButton(
               onPressed: () {
-                context.pushNamed(TwoCScreen.path);
+                const TwoCPageRoute().go(context);
               },
               child: const Text('Go to C Page'),
             ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:one/one.dart';
+import 'package:three/three.dart';
 
 import 'screen_routes.dart';
 
@@ -29,15 +30,21 @@ class HomeScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                context.go(const CPageRoute().location);
+                const CPageRoute().go(context);
               },
               child: const Text('Go to C Page'),
             ),
             ElevatedButton(
               onPressed: () {
-                context.go(onePackageRoute);
+                context.goNamed(onePackageRoute);
               },
               child: const Text('Go to Package One'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                context.goNamed(threePackageRoute);
+              },
+              child: const Text('Go to Package Three'),
             ),
           ],
         ),

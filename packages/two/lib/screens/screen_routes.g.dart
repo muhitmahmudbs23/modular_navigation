@@ -7,59 +7,42 @@ part of 'screen_routes.dart';
 // **************************************************************************
 
 List<RouteBase> get $appRoutes => [
-      $oneInitialRoute,
+      $twoInitialRoute,
     ];
 
-RouteBase get $oneInitialRoute => GoRouteData.$route(
-      path: '/',
-      name: 'init',
-      factory: $OneInitialRouteExtension._fromState,
+RouteBase get $twoInitialRoute => GoRouteData.$route(
+      path: '/one',
+      name: 'one',
+      factory: $TwoInitialRouteExtension._fromState,
       routes: [
         GoRouteData.$route(
-          path: 'one',
-          name: 'one',
-          factory: $OneHomeRouteExtension._fromState,
+          path: 'two',
+          name: 'two',
+          factory: $TwoHomeRouteExtension._fromState,
           routes: [
             GoRouteData.$route(
-              path: 'one-a',
-              name: 'one-a',
-              factory: $OneAPageRouteExtension._fromState,
+              path: 'two-a',
+              name: 'two-a',
+              factory: $TwoAPageRouteExtension._fromState,
             ),
             GoRouteData.$route(
-              path: 'one-b',
-              name: 'one-b',
-              factory: $OneBPageRouteExtension._fromState,
+              path: 'two-b',
+              name: 'two-b',
+              factory: $TwoBPageRouteExtension._fromState,
             ),
             GoRouteData.$route(
-              path: 'one-c',
-              name: 'one-c',
-              factory: $OneCPageRouteExtension._fromState,
+              path: 'two-c',
+              name: 'two-c',
+              factory: $TwoCPageRouteExtension._fromState,
             ),
           ],
         ),
       ],
     );
 
-extension $OneInitialRouteExtension on OneInitialRoute {
-  static OneInitialRoute _fromState(GoRouterState state) =>
-      const OneInitialRoute();
-
-  String get location => GoRouteData.$location(
-        '/',
-      );
-
-  void go(BuildContext context) => context.go(location);
-
-  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
-
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
-
-  void replace(BuildContext context) => context.replace(location);
-}
-
-extension $OneHomeRouteExtension on OneHomeRoute {
-  static OneHomeRoute _fromState(GoRouterState state) => const OneHomeRoute();
+extension $TwoInitialRouteExtension on TwoInitialRoute {
+  static TwoInitialRoute _fromState(GoRouterState state) =>
+      const TwoInitialRoute();
 
   String get location => GoRouteData.$location(
         '/one',
@@ -75,11 +58,11 @@ extension $OneHomeRouteExtension on OneHomeRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $OneAPageRouteExtension on OneAPageRoute {
-  static OneAPageRoute _fromState(GoRouterState state) => const OneAPageRoute();
+extension $TwoHomeRouteExtension on TwoHomeRoute {
+  static TwoHomeRoute _fromState(GoRouterState state) => const TwoHomeRoute();
 
   String get location => GoRouteData.$location(
-        '/one/one-a',
+        '/one/two',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -92,11 +75,11 @@ extension $OneAPageRouteExtension on OneAPageRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $OneBPageRouteExtension on OneBPageRoute {
-  static OneBPageRoute _fromState(GoRouterState state) => const OneBPageRoute();
+extension $TwoAPageRouteExtension on TwoAPageRoute {
+  static TwoAPageRoute _fromState(GoRouterState state) => const TwoAPageRoute();
 
   String get location => GoRouteData.$location(
-        '/one/one-b',
+        '/one/two/two-a',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -109,11 +92,28 @@ extension $OneBPageRouteExtension on OneBPageRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $OneCPageRouteExtension on OneCPageRoute {
-  static OneCPageRoute _fromState(GoRouterState state) => const OneCPageRoute();
+extension $TwoBPageRouteExtension on TwoBPageRoute {
+  static TwoBPageRoute _fromState(GoRouterState state) => const TwoBPageRoute();
 
   String get location => GoRouteData.$location(
-        '/one/one-c',
+        '/one/two/two-b',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $TwoCPageRouteExtension on TwoCPageRoute {
+  static TwoCPageRoute _fromState(GoRouterState state) => const TwoCPageRoute();
+
+  String get location => GoRouteData.$location(
+        '/one/two/two-c',
       );
 
   void go(BuildContext context) => context.go(location);

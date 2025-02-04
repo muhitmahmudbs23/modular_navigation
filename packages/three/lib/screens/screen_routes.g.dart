@@ -7,42 +7,42 @@ part of 'screen_routes.dart';
 // **************************************************************************
 
 List<RouteBase> get $appRoutes => [
-      $oneInitialRoute,
+      $threeInitialRoute,
     ];
 
-RouteBase get $oneInitialRoute => GoRouteData.$route(
+RouteBase get $threeInitialRoute => GoRouteData.$route(
       path: '/',
       name: 'init',
-      factory: $OneInitialRouteExtension._fromState,
+      factory: $ThreeInitialRouteExtension._fromState,
       routes: [
         GoRouteData.$route(
-          path: 'one',
-          name: 'one',
-          factory: $OneHomeRouteExtension._fromState,
+          path: 'three',
+          name: 'three',
+          factory: $ThreeHomeRouteExtension._fromState,
           routes: [
             GoRouteData.$route(
-              path: 'one-a',
-              name: 'one-a',
-              factory: $OneAPageRouteExtension._fromState,
+              path: 'three-a',
+              name: 'three-a',
+              factory: $ThreeAPageRouteExtension._fromState,
             ),
             GoRouteData.$route(
-              path: 'one-b',
-              name: 'one-b',
-              factory: $OneBPageRouteExtension._fromState,
+              path: 'three-b',
+              name: 'three-b',
+              factory: $ThreeBPageRouteExtension._fromState,
             ),
             GoRouteData.$route(
-              path: 'one-c',
-              name: 'one-c',
-              factory: $OneCPageRouteExtension._fromState,
+              path: 'three-c',
+              name: 'three-c',
+              factory: $ThreeCPageRouteExtension._fromState,
             ),
           ],
         ),
       ],
     );
 
-extension $OneInitialRouteExtension on OneInitialRoute {
-  static OneInitialRoute _fromState(GoRouterState state) =>
-      const OneInitialRoute();
+extension $ThreeInitialRouteExtension on ThreeInitialRoute {
+  static ThreeInitialRoute _fromState(GoRouterState state) =>
+      const ThreeInitialRoute();
 
   String get location => GoRouteData.$location(
         '/',
@@ -58,11 +58,12 @@ extension $OneInitialRouteExtension on OneInitialRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $OneHomeRouteExtension on OneHomeRoute {
-  static OneHomeRoute _fromState(GoRouterState state) => const OneHomeRoute();
+extension $ThreeHomeRouteExtension on ThreeHomeRoute {
+  static ThreeHomeRoute _fromState(GoRouterState state) =>
+      const ThreeHomeRoute();
 
   String get location => GoRouteData.$location(
-        '/one',
+        '/three',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -75,11 +76,12 @@ extension $OneHomeRouteExtension on OneHomeRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $OneAPageRouteExtension on OneAPageRoute {
-  static OneAPageRoute _fromState(GoRouterState state) => const OneAPageRoute();
+extension $ThreeAPageRouteExtension on ThreeAPageRoute {
+  static ThreeAPageRoute _fromState(GoRouterState state) =>
+      const ThreeAPageRoute();
 
   String get location => GoRouteData.$location(
-        '/one/one-a',
+        '/three/three-a',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -92,11 +94,12 @@ extension $OneAPageRouteExtension on OneAPageRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $OneBPageRouteExtension on OneBPageRoute {
-  static OneBPageRoute _fromState(GoRouterState state) => const OneBPageRoute();
+extension $ThreeBPageRouteExtension on ThreeBPageRoute {
+  static ThreeBPageRoute _fromState(GoRouterState state) =>
+      const ThreeBPageRoute();
 
   String get location => GoRouteData.$location(
-        '/one/one-b',
+        '/three/three-b',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -109,11 +112,12 @@ extension $OneBPageRouteExtension on OneBPageRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $OneCPageRouteExtension on OneCPageRoute {
-  static OneCPageRoute _fromState(GoRouterState state) => const OneCPageRoute();
+extension $ThreeCPageRouteExtension on ThreeCPageRoute {
+  static ThreeCPageRoute _fromState(GoRouterState state) =>
+      const ThreeCPageRoute();
 
   String get location => GoRouteData.$location(
-        '/one/one-c',
+        '/three/three-c',
       );
 
   void go(BuildContext context) => context.go(location);

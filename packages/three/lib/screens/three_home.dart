@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-
-import 'three_a.dart';
-import 'three_b.dart';
-import 'three_c.dart';
+import 'package:three/screens/screen_routes.dart';
 
 class ThreeHomeScreen extends StatelessWidget {
   const ThreeHomeScreen({super.key});
@@ -20,19 +16,19 @@ class ThreeHomeScreen extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                context.pushNamed(ThreeAScreen.path);
+                const ThreeAPageRoute().go(context);
               },
               child: const Text('Go to A Page'),
             ),
             ElevatedButton(
               onPressed: () {
-                context.pushNamed(ThreeBScreen.path);
+                const ThreeBPageRoute().go(context);
               },
               child: const Text('Go to B Page'),
             ),
             ElevatedButton(
               onPressed: () {
-                context.pushNamed(ThreeCScreen.path);
+                const ThreeCPageRoute().go(context);
               },
               child: const Text('Go to C Page'),
             ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class OneBScreen extends StatelessWidget {
-  static const String path = '/oneb';
 
   const OneBScreen({super.key});
 

@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:modular_navigation/screens/a.dart';
-import 'package:modular_navigation/screens/b.dart';
-import 'package:one/screens/screen_routes.dart';
+import 'package:one/one.dart';
 
+import 'a.dart';
+import 'b.dart';
 import 'c.dart';
 import 'home.dart';
 
@@ -23,10 +23,12 @@ part 'screen_routes.g.dart';
       ],
     ),
     TypedGoRoute<BPageRoute>(
-      path: 'b:value',
+      path: '/b:value',
       name: 'b',
     ),
     ...oneRoutes,
+    // ...threeRoutes,
+    // ...twoRoutes,
   ],
 )
 @immutable
@@ -71,4 +73,3 @@ class CPageRoute extends GoRouteData {
     return const CPage();
   }
 }
-
