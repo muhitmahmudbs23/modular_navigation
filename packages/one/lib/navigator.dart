@@ -1,12 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:one/screens/one_home.dart';
 
 import 'screens/one_a.dart';
 import 'screens/one_b.dart';
 import 'screens/one_c.dart';
-
-late GlobalKey<NavigatorState>? parentNavigatorKey;
 
 List<RouteBase> get oneRoutes => [
       GoRoute(

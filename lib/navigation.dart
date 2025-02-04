@@ -11,9 +11,6 @@ import 'screens/c.dart';
 import 'screens/home.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
-final GlobalKey<NavigatorState> oneNavigatorKey = GlobalKey<NavigatorState>();
-final GlobalKey<NavigatorState> twoNavigatorKey = GlobalKey<NavigatorState>();
-final GlobalKey<NavigatorState> threeNavigatorKey = GlobalKey<NavigatorState>();
 
 final GoRouter router = GoRouter(
   debugLogDiagnostics: true,
@@ -44,19 +41,8 @@ final GoRouter router = GoRouter(
             ),
           ],
         ),
-        // GoRoute(
-        //   path: InitOnePage.path,
-        //   name: InitOnePage.path,
-        //   builder: (context, state) => const InitOnePage(),
-        //   routes: [...oneRoutes],
-        // ),
         ...oneRoutes,
         ...twoRoutes,
-        // GoRoute(
-        //   path: InitTwoPage.path,
-        //   name: InitTwoPage.path,
-        //   builder: (context, state) => const InitTwoPage(),
-        // ),
       ],
     ),
   ],

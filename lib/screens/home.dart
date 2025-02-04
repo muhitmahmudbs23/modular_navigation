@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:modular_navigation/screens/c.dart';
 import 'package:one/one.dart';
 
 import 'a.dart';
 import 'b.dart';
-import 'c.dart';
-
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -20,19 +19,19 @@ class HomeScreen extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                context.pushNamed(APage.path);
+                context.goNamed(APage.path);
               },
               child: const Text('Go to A Page'),
             ),
             ElevatedButton(
               onPressed: () {
-                context.pushNamed(BPage.path);
+                context.goNamed(BPage.path);
               },
               child: const Text('Go to B Page'),
             ),
             ElevatedButton(
               onPressed: () {
-                context.go(CPage.route);
+                context.goNamed(CPage.path);
               },
               child: const Text('Go to C Page'),
             ),

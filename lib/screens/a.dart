@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class APage extends StatelessWidget {
-  static const String path = '/a';
+  static const String path = 'a';
 
   const APage({super.key});
 

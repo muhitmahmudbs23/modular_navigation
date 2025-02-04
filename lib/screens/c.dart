@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class CPage extends StatelessWidget {
-  static const String path = '/c';
-  static const String route = '/a/b/c';
+  static const String path = 'c';
 
   const CPage({super.key});
 

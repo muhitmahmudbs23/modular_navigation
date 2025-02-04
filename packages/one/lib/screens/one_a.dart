@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class OneAScreen extends StatelessWidget {
-  static const String path = '/oneA';
+  static const String path = 'oneA';
 
   const OneAScreen({super.key});
 
